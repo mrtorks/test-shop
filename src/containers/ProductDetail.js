@@ -2,7 +2,10 @@ import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
-import { selectedProduct, removeSelectedProduct } from "../redux/actions/productActions";
+import {
+  selectedProduct,
+  removeSelectedProduct,
+} from "../redux/actions/productActions";
 
 const ProductDetail = () => {
   let product = useSelector((state) => state.product);
@@ -34,12 +37,15 @@ const ProductDetail = () => {
             <div className="ui vertical divider">AND</div>
             <div className="middle aligned row">
               <div className="column lp">
-                <img className="ui fluid image" src={image} alt={title}/>
+                <img className="ui fluid image" src={image} alt={title} />
               </div>
               <div className="column rp">
                 <h1>{title}</h1>
                 <h2>
-                  <a className="ui teal tag label">${price}</a>
+                  <p className="ui teal tag label">${price}</p>
+                  {/*<a href="#" className="ui teal tag label">
+                    ${price}
+                  </a>*/}
                 </h2>
                 <h3 className="ui brown block header">{category}</h3>
                 <p>{description}</p>
